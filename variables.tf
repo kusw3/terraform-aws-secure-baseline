@@ -185,6 +185,11 @@ variable "vpc_log_retention_in_days" {
   default     = 365
 }
 
+variable "vpc_enable_default_vpc" {
+  description = "Whether or not this module should create a default VPC if none is found."
+  default     = true
+}
+
 # --------------------------------------------------------------------------------------------------
 # Variables for config-baseline module.
 # --------------------------------------------------------------------------------------------------
