@@ -229,6 +229,10 @@ variable "vpc_flow_logs_s3_key_prefix" {
   default     = "flow-logs"
 }
 
+variable "vpc_enable_default_vpc" {
+  description = "Enable configuration of region's default VPC."
+  default     = true
+}
 
 # --------------------------------------------------------------------------------------------------
 # Variables for config-baseline module.

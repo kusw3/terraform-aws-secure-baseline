@@ -67,7 +67,7 @@ module "vpc_baseline_ap-northeast-1" {
     aws = aws.ap-northeast-1
   }
 
-  enabled                     = contains(var.target_regions, "ap-northeast-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ap-northeast-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -75,7 +75,7 @@ module "vpc_baseline_ap-northeast-1" {
   flow_logs_retention_in_days = var.vpc_flow_logs_retention_in_days
   flow_logs_s3_arn            = local.flow_logs_s3_arn
   flow_logs_s3_key_prefix     = var.vpc_flow_logs_s3_key_prefix
-
+  
 
   tags = var.tags
 }
@@ -87,7 +87,7 @@ module "vpc_baseline_ap-northeast-2" {
     aws = aws.ap-northeast-2
   }
 
-  enabled                     = contains(var.target_regions, "ap-northeast-2")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ap-northeast-2") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -95,7 +95,7 @@ module "vpc_baseline_ap-northeast-2" {
   flow_logs_retention_in_days = var.vpc_flow_logs_retention_in_days
   flow_logs_s3_arn            = local.flow_logs_s3_arn
   flow_logs_s3_key_prefix     = var.vpc_flow_logs_s3_key_prefix
-
+  
 
   tags = var.tags
 }
@@ -107,7 +107,7 @@ module "vpc_baseline_ap-south-1" {
     aws = aws.ap-south-1
   }
 
-  enabled                     = contains(var.target_regions, "ap-south-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ap-south-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -127,7 +127,7 @@ module "vpc_baseline_ap-southeast-1" {
     aws = aws.ap-southeast-1
   }
 
-  enabled                     = contains(var.target_regions, "ap-southeast-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ap-southeast-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -147,7 +147,7 @@ module "vpc_baseline_ap-southeast-2" {
     aws = aws.ap-southeast-2
   }
 
-  enabled                     = contains(var.target_regions, "ap-southeast-2")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ap-southeast-2") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -167,7 +167,7 @@ module "vpc_baseline_ca-central-1" {
     aws = aws.ca-central-1
   }
 
-  enabled                     = contains(var.target_regions, "ca-central-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "ca-central-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -187,7 +187,7 @@ module "vpc_baseline_eu-central-1" {
     aws = aws.eu-central-1
   }
 
-  enabled                     = contains(var.target_regions, "eu-central-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "eu-central-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -207,7 +207,7 @@ module "vpc_baseline_eu-north-1" {
     aws = aws.eu-north-1
   }
 
-  enabled                     = contains(var.target_regions, "eu-north-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "eu-north-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -227,7 +227,7 @@ module "vpc_baseline_eu-west-1" {
     aws = aws.eu-west-1
   }
 
-  enabled                     = contains(var.target_regions, "eu-west-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "eu-west-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -247,7 +247,7 @@ module "vpc_baseline_eu-west-2" {
     aws = aws.eu-west-2
   }
 
-  enabled                     = contains(var.target_regions, "eu-west-2")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "eu-west-2") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -267,7 +267,7 @@ module "vpc_baseline_eu-west-3" {
     aws = aws.eu-west-3
   }
 
-  enabled                     = contains(var.target_regions, "eu-west-3")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "eu-west-3") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -287,7 +287,7 @@ module "vpc_baseline_sa-east-1" {
     aws = aws.sa-east-1
   }
 
-  enabled                     = contains(var.target_regions, "sa-east-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "sa-east-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -307,7 +307,7 @@ module "vpc_baseline_us-east-1" {
     aws = aws.us-east-1
   }
 
-  enabled                     = contains(var.target_regions, "us-east-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "us-east-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -327,7 +327,7 @@ module "vpc_baseline_us-east-2" {
     aws = aws.us-east-2
   }
 
-  enabled                     = contains(var.target_regions, "us-east-2")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "us-east-2") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -347,7 +347,7 @@ module "vpc_baseline_us-west-1" {
     aws = aws.us-west-1
   }
 
-  enabled                     = contains(var.target_regions, "us-west-1")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "us-west-1") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
@@ -367,7 +367,7 @@ module "vpc_baseline_us-west-2" {
     aws = aws.us-west-2
   }
 
-  enabled                     = contains(var.target_regions, "us-west-2")
+  enabled                     = var.vpc_enable_default_vpc ? contains(var.target_regions, "us-west-2") : false
   enable_flow_logs            = var.vpc_enable_flow_logs
   flow_logs_destination_type  = var.vpc_flow_logs_destination_type
   flow_logs_log_group_name    = var.vpc_flow_logs_log_group_name
